@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>PiCam</title>
+        <style type="text/css">
+            *{
+                background-color: #798592;
+            }
+            .style1
+            {
+                width: 50%;
+            }
+
+            .row{
+                margin: 0;
+            }
+
+            input{
+                position: absolute;
+            }
+
+            #btnUp{
+                left: 940px;
+            }
+
+            #btnUpLeft{
+                top: 60px;
+                left: 800px;
+                
+            }
+            #btnUpRight{
+                left: 1030px;
+                top: 60px;
+            }
+            #btnLeft{
+                left: 700px;
+                top: 120px;
+            }
+            #btnRight{
+                left: 1150px;
+                top:120px;
+            }
+            #btnDownLeft{
+                left: 800px;
+                top: 180px;
+            }
+            #btnDownRight{
+                left: 1030px;
+                top: 180px;
+            }
+            #btnDown{
+                left: 940px;
+                top: 240px;
+            }
+
+            .btn-default{
+                background-color: #e3d1c1;
+            }
+
+        </style>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript">
+
+            function Button_onclick(direction) {
+                $.ajax({ url: '/' + direction });
+                
+            }
+
+        </script>
+    </head>
+    <body>
+
+
+		<div class="row center" style="text-align: center;">
+            <OBJECT classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
+                    codebase="http://downloads.videolan.org/pub/videolan/vlc/latest/win32/axvlc.cab"
+                    width="800" height="600" id="vlc" events="True">
+                    <param name="Src" value="http://10.31.12.63:8080/" />
+                    <param name="ShowDisplay" value="True" />
+                    <param name="AutoLoop" value="False" />
+                    <param name="AutoPlay" value="True" />
+                    <embed id="vlcEmb" type="application/x-google-vlc-plugin" version="VideoLAN.VLCPlugin.2" autoplay="yes" loop="no" width="640" height="480"
+                    target="http://10.31.12.63:8080/" ></embed>
+            </OBJECT>      
+        </div>
+
+        <div class="row" style="position: absolute;">
+           
+                <input class="btn btn-default" id="btnUp" type="button" value="Up" onclick="Button_onclick('up')" />
+            
+           
+
+                <input class="btn btn-default" id="btnUpLeft" type="button" value="Up-Left" onclick="Button_onclick('left')" />
+
+                <input class="btn btn-default" id="btnUpRight" type="button" value=" Up-Right" onclick="Button_onclick('right')" />
+            
+           
+
+                <input class="btn btn-default" id="btnLeft" type="button" value="Left" onclick="Button_onclick('left')" />
+                
+                <input class="btn btn-default" id="btnRight" type="button" value="Right" onclick="Button_onclick('right')" />
+                
+            
+           
+                <input class="btn btn-default" id="btnDownLeft" type="button" value="Down-Left" onclick="Button_onclick('down')" />
+
+                <input class="btn btn-default" id="btnDownRight" type="button" value="Down-Right" onclick="Button_onclick('down')" />
+            
+
+           
+                <input class="btn btn-default" id="btnDown" type="button" value="Down" onclick="Button_onclick('down')" />
+            
+        </div>
+
+                    
+                
+                
+    </body>
+</html>
